@@ -14,6 +14,10 @@ h6 {
   font-family: "EB Garamond", serif;
 }
 
+.para{
+  font-size: 14px;
+}
+
 :root {
   --primary-green: #3e7104;
   --primary-blue: #083D5F;
@@ -843,9 +847,7 @@ h6 {
   padding-bottom: 4%;
 }
 
-.normal-font{
-  font-size: 14px;
-}
+
 
 @media screen and (max-width:550px) {
 

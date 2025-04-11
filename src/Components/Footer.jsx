@@ -161,7 +161,7 @@ const Footer = () => {
                         <span>+91 944 258 0495</span>
                         <p>+91 948 798 0495</p>
                         <h6><FaTelegramPlane size={20} className="me-1" />Mail Us</h6>
-                        <div className='pb-2'> <a href="mailto:capandian1971@gmail.com" className="link">capandian1971@gmail.com</a></div>
+                        <p className='pb-2'> <a href="mailto:capandian1971@gmail.com" className="link">capandian1971@gmail.com</a></p>
 
                         <h6>Follow Us On</h6>
                         <div className="d-flex gap-3">

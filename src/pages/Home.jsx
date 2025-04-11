@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import Content from "./Content";
 import { Employee } from "./AboutUs/AboutUs_OurTeam";
 import { FaArrowRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -9,10 +8,12 @@ import Advisory from "../images/Advisory1.png";
 import indirect from "../images/IndirectTax1.png";
 import Secretarial from "../images/Secretarial1.png";
 import DirectTax from "../images/DirectTax1.png";
+import OutSourcing from "../images/Transformation1.png"
 import { CiCircleCheck } from "react-icons/ci";
 // import { PiCloudSlash } from "react-icons/pi";
 import Herosection from "../images/Home-heroSection.png"
 import chithirapandian from "../images/TeamImage/CA-6.png";
+import founder from "../images/TeamImage/CA.png"
 import Team from "../images/TeamImage/CA-13.png";
 import Team2 from "../images/TeamImage/CA-11.png";
 import Team3 from "../images/TeamImage/CA-17.png";
@@ -21,7 +22,7 @@ import Team5 from "../images/TeamImage/CA-14.png";
 import Team6 from "../images/TeamImage/CA-10.png";
 import Team7 from "../images/TeamImage/CA-8.png";
 import Team8 from "../images/TeamImage/CA-22.jpeg";
-import Team9 from "../images/TeamImage/CA-25.png";
+// import Team9 from "../images/TeamImage/CA-25.png";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 import Slider from 'react-slick';
@@ -30,7 +31,7 @@ import "slick-carousel/slick/slick-theme.css";
 // import Carousel from "react-multi-carousel";
 // import "react-multi-carousel/lib/styles.css";
 
-const TeamImage = [Team, Team2, Team3, Team4, Team5, Team6, Team7, Team8, Team9];
+const TeamImage = [Team, Team2, Team3, Team4, Team5, Team6, Team7, Team8,];
 const cardItems = [
   {
     id: 1,
@@ -76,6 +77,14 @@ const cardItems = [
     icon: bookkeeper,
     title: "Book keeping Services",
     description: ["Accounting supervision", "Management reports", "Statutory returns", "Preparation of MIS reports"],
+    link: "/service"
+
+  },
+  {
+    id: 7,
+    icon: OutSourcing,
+    title: "Outsourcing Services",
+    description: ["Access to Expertise", "Quality Improvement", "Scalability", "Cost Savings", "Time Efficiency"],
     link: "/service"
 
   }
@@ -227,8 +236,7 @@ const testimonials = [
 ];
 
 const Home = () => {
-  const home = Content.Home;
-
+  
 
   const handleChange = () => {
     window.scroll(0, 0);
@@ -249,41 +257,53 @@ const Home = () => {
 
 
 
-      <div className=" container hero-section pb-5 clearfix ">
-
-        <img src={require("../images/CAOffice.jpg")} alt="hero section" width="95%" className="rounded-4 col-md-5 col-12 float-md-end mb-2 ms-md-3" />
-        <div className="">
-          <div className="main-title text-center py-3">
-            <h2>You Can Trust!</h2>
-            <h2 className="typing">CHITHIRAIPANDIAN AND CO</h2>
-            <h2>Chartered Accountants!</h2>
+      <div className=" container hero-section  ">
+        <div className="row d-flex flex-sm-row-reverse align-items-center justify-content-center">
+          <div className="col-12 col-sm-12 col-md-6 mb-5">
+            <img src={require("../images/CAOffice.jpg")} alt="hero section" width="100%" className="rounded-4 img-fluid " />
           </div>
-          <div className="normal-font" >
-            <p style={{ textAlign: "justify" }}>
-              At <b>Chithiraipandian and Co</b>, we believe in building long-term relationships based on trust, integrity, and professionalism. Our mission is to deliver proactive, practical, and results-driven financial solutions that help our clients thrive in a dynamic marketplace.</p>
-            <p style={{ textAlign: "justify" }}>
-              At <b>Chithiraipandian and Co</b>, we are dedicated to empowering businesses and individuals with expert financial and advisory services. With a legacy of more than two decades of experience, we specialize in providing direct and indirect taxation, business taxation, international taxation, auditing and assurance services, company formation, corporate compliances, due diligence, transfer pricing, virtual CFO solutions, and financial consulting solutions that are tailored to meet the specific needs of our clients.
-            </p>
-            <div style={{ textAlign: "justify" }}>
-              Our team of experienced Chartered Accountants and financial advisors is committed to delivering quality service and valuable insights. We work closely with businesses of all sizes, from startups and SMEs to large corporations. Under the leadership of our founder, we’ve transitioned to a technology-driven firm, consistently expanding our service offerings and fostering long-term client relationships.
+          <div className="col-12 col-sm-12 col-md-6 mb-5 para">
+            <div className="main-title text-center py-3">
+              <h2>You Can Trust!</h2>
+              <h2 className="typing">CHITHIRAIPANDIAN AND CO</h2>
+              <h2>Chartered Accountants</h2>
+            </div>
+            <div  >
+              <p style={{ textAlign: "justify" }}>
+                At <b>Chithiraipandian and Co</b>, we believe in building long-term relationships based on trust, integrity, and professionalism. Our mission is to deliver proactive, practical, and results-driven financial solutions that help our clients thrive in a dynamic marketplace.</p>
+              <p style={{ textAlign: "justify" }}>
+                At <b>Chithiraipandian and Co</b>, we are dedicated to empowering businesses and individuals with expert financial and advisory services. With a legacy of more than two decades of experience, we specialize in providing direct and indirect taxation, business taxation, international taxation, auditing and assurance services, company formation, corporate compliances, due diligence, transfer pricing, virtual CFO solutions, and financial consulting solutions that are tailored to meet the specific needs of our clients.
+              </p>
+              <div style={{ textAlign: "justify" }}>
+                Our team of experienced Chartered Accountants and financial advisors is committed to delivering quality service and valuable insights. We work closely with businesses of all sizes, from startups and SMEs to large corporations. Under the leadership of our founder, we’ve transitioned to a technology-driven firm, consistently expanding our service offerings and fostering long-term client relationships.
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
       {/*Our Founder */}
       <h3 className=" main-title text-center pb-3">Our Founder</h3>
-      <div className="about-us py-2 container  clearfix ">
+      <div className="about-us py-2 container">
+        <div className="row d-flex align-items-center justify-content-center">
+          <div className="col-12 col-sm-12 col-md-6 mb-5">
+            <img src={founder} alt="chithirapandian" width="100%" className="rounded-4 img-fluid" />
+          </div>
+          <div className="col-12 col-sm-12 col-md-6 mb-5 para" >
+            <h5 className="typing">Thangaraja Chithiraipandian</h5>
+            <b >Visionary Chartered Accountant | Tech-Driven Strategist| Information System Auditor (ICAI) | Certified Artificial Intelligence Chartered Accountant (ICAI) | Life Member – Tamil Nadu and Pondicherry Chartered Accountants Association</b>
 
-        <img src={chithirapandian} alt="chithirapandian" width="80%" className="rounded-4 col-md-5 col-12 float-md-start mb-3 me-md-4 img-fluid" />
+            <p className="mt-2">
+              Core Areas of Expertise: Strategic Financial Planning | Risk Management & Risk Audit | Performance Optimization| Corporate Governance| Information System Audit | Global Outsourcing | Business Valuation for M&A
+            </p>
 
-        <div className="normal-font" >
-          <h5>Thangaraja Chithiraipandian</h5>
-          <h6>Visionary Chartered Accountant | Tech-Driven Strategist| Information System Auditor (ICAI) | Certified Artificial Intelligence Chartered Accountant (ICAI) | Life Member – Tamil Nadu and Pondicherry Chartered Accountants Association</h6>
-
-          <p>Core Areas of Expertise: Strategic Financial Planning | Risk Management & Risk Audit | Performance Optimization| Corporate Governance| Information System Audit | Global Outsourcing | Business Valuation for M&A</p>
-          <p style={{ textAlign: "justify" }}>T. Chithiraipandian is a forward-thinking Chartered Accountant, having more than two decades of experience in transforming businesses through his finance Modelling and Business Strategies. Known for his precision, innovation, and strategic acumen, he bridges traditional finance with modern technology—empowering organizations to scale with clarity and confidence. His dynamic approach integrates financial discipline, business foresight, and cutting-edge tools, making him a trusted advisor to leaders in India and abroad. His core strength lies in proven track record in establishment of New Enterprises/startups, turnaround of financially stressed businesses in to profitable business, transforming complex financial data into clear and strategic decisions that drive business success, emphasizes in Business Analysis, which covers leveraging data, market intelligence, and key performance indicators (KPIs) to uncover opportunities and sharpen the client’s competitive edge. He also expertise in providing strong Decision Support, which includes delivering sharp, data-backed financial insights that support high-stakes decisions, investments, Mergers &Acquisition, cost of restructuring, and beyond. With an emphasis on sustainable growth, strong governance, and global best practices, he consistently delivers value that contributes to long-term organizational excellence.
-          </p>
+            <p style={{ textAlign: "justify" }}>T. Chithiraipandian is a forward-thinking Chartered Accountant with over two decades of experience in transforming businesses through financial modelling and strategic business solutions. Known for his precision, innovation, and strategic acumen, he bridges traditional finance with modern technology—empowering organizations to scale with clarity and confidence. His dynamic approach integrates financial discipline, business foresight, and cutting-edge tools, making him a trusted advisor to leaders in India and abroad.His core strengths include a proven track record in establishing new enterprises and startups, turning around financially stressed businesses into profitable ventures, and transforming complex financial data into clear, strategic decisions that drive business success. He places strong emphasis on business analysis, leveraging data, market intelligence, and key performance indicators (KPIs) to uncover opportunities and sharpen clients’ competitive edge.
+            </p>
+            <p style={{ textAlign: "justify" }}>
+              He also specializes in providing robust decision support, delivering sharp, data-backed financial insights that aid high-stakes decisions, investments, mergers and acquisitions, cost restructuring, and beyond. With a focus on sustainable growth, strong governance, and global best practices, he consistently delivers value that contributes to long-term organizational excellence.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -291,7 +311,7 @@ const Home = () => {
       {/* Our Services */}
       <div className="bg-white p-3 container our-service">
         <h3 className=" main-title text-center">Our Services</h3>
-        <div className="row">
+        <div className="row d-flex justify-content-evenly">
           {cardItems.map((item, index) => (
             <div key={index} className="col-md-4 col-sm-6 col-12 g-4 ">
               <div className={`serviceCard-item serviceCard-item-${index + 1} shadow h-100`}>
@@ -307,7 +327,7 @@ const Home = () => {
                     </div>
                   )}
                 </div>
-                <Link to={item.link} onClick={handleChange} className="text-decoration-none">
+                <Link to={item.link} onClick={handleChange} className="text-decoration-none text-white">
                   <button className="serviceCard-button ">
                     <FaArrowRight size={20} className="me-3" />  Learn More
                   </button>
@@ -328,13 +348,13 @@ const Home = () => {
             </div>
 
           </div>
-          <div className="col-12 col-sm-12 col-md-6 px-5 ">
+          <div className="col-12 col-sm-12 col-md-6 px-5 para ">
             <div style={{ textAlign: 'justify' }}>
-              <p className="normal-font">
+              <p >
                 Our firm is powered by a dynamic team of experts dedicated to delivering top-tier service. Led by our experienced Proprietor, we uphold the highest standards of quality and integrity.
               </p>
             </div>
-            <div className="py-3 normal-font">
+            <div className="py-3 ">
               <ul>
                 <li> <b>Chartered Accountants:</b> Providing expert advice on financial reporting, taxation, audits, and strategic planning to drive business success.</li>
                 <li>  <b>Company Secretaries:</b> Ensuring corporate compliance and governance, guiding businesses through regulatory complexities.</li>

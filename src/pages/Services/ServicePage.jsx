@@ -7,7 +7,7 @@ import Advisory from "../../images/Advisory1.png";
 import Indirect from "../../images/IndirectTax1.png";
 import Secretarial from "../../images/Secretarial1.png";
 import DirectTax from "../../images/DirectTax1.png";
-
+import Outsourcing from "../../images/Transformation1.png"
 
 
 const ServicePage = () => {
@@ -212,63 +212,65 @@ const ServicePage = () => {
       <div className='Outsourcing'>
         <div className='row d-flex flex-sm-row-reverse align-items-center justify-content-center'>
           <div className='col-md-4 col-12 px-4 d-flex justify-content-center'>
-            <img src={Secretarial} alt="Secretarial" width="100%" />
+            <img src={Outsourcing} alt="Outsourcing" width="100%" />
           </div>
           <div className='col-md-8 col-12 px-md-5 px-4'>
             <div className=' service-card'>
               <h2 className='main-title text-center py-3'>Outsourcing</h2>
               <div className='service-sub-card'>
                 <div className='service-card-title'>Why Outsourcing</div>
-                <table border="1" cellspacing="0" cellpadding="8" className='table'>
-                  <thead>
-                    <tr>
-                      <th className='text-center'>Benefit</th>
-                      <th className='text-center'>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Focus on Core Business</td>
-                      <td>Allows companies to concentrate on strategic goals and core operations.</td>
-                    </tr>
-                    <tr>
-                      <td>Access to Expertise</td>
-                      <td>Brings in skilled professionals with industry-specific knowledge.</td>
-                    </tr>
-                    <tr>
-                      <td>Operational Efficiency</td>
-                      <td>Helps streamline processes and improve productivity.</td>
-                    </tr>
-                    <tr>
-                      <td>Scalability</td>
-                      <td>Offers flexibility to scale services up or down based on business needs.</td>
-                    </tr>
-                    <tr>
-                      <td>Faster Turnaround</td>
-                      <td>Ensures quicker delivery of tasks due to specialized attention.</td>
-                    </tr>
-                    <tr>
-                      <td>Cost Savings</td>
-                      <td>Reduces overhead costs related to hiring, training, and infrastructure.</td>
-                    </tr>
-                    <tr>
-                      <td>Quality Improvement</td>
-                      <td>Outsourcing to experts often leads to higher quality output.</td>
-                    </tr>
-                    <tr>
-                      <td>Time Efficiency</td>
-                      <td>Faster execution through specialized teams and better tools.</td>
-                    </tr>
-                    <tr>
-                      <td>Access to Global Talent</td>
-                      <td>Taps into a broader talent pool with diverse skills.</td>
-                    </tr>
-                    <tr>
-                      <td>Risk Sharing</td>
-                      <td>Business risks are shared with the service provider.</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className='d-flex align-items-center justify-content-center'>
+                  <table border="1" cellspacing="0" cellpadding="8" className=''>
+                    <thead>
+                      <tr>
+                        <th className='text-center'>Benefit</th>
+                        <th className='text-center'>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Focus on Core Business</td>
+                        <td>Allows companies to concentrate on strategic goals and core operations.</td>
+                      </tr>
+                      <tr>
+                        <td>Access to Expertise</td>
+                        <td>Brings in skilled professionals with industry-specific knowledge.</td>
+                      </tr>
+                      <tr>
+                        <td>Operational Efficiency</td>
+                        <td>Helps streamline processes and improve productivity.</td>
+                      </tr>
+                      <tr>
+                        <td>Scalability</td>
+                        <td>Offers flexibility to scale services up or down based on business needs.</td>
+                      </tr>
+                      <tr>
+                        <td>Faster Turnaround</td>
+                        <td>Ensures quicker delivery of tasks due to specialized attention.</td>
+                      </tr>
+                      <tr>
+                        <td>Cost Savings</td>
+                        <td>Reduces overhead costs related to hiring, training, and infrastructure.</td>
+                      </tr>
+                      <tr>
+                        <td>Quality Improvement</td>
+                        <td>Outsourcing to experts often leads to higher quality output.</td>
+                      </tr>
+                      <tr>
+                        <td>Time Efficiency</td>
+                        <td>Faster execution through specialized teams and better tools.</td>
+                      </tr>
+                      <tr>
+                        <td>Access to Global Talent</td>
+                        <td>Taps into a broader talent pool with diverse skills.</td>
+                      </tr>
+                      <tr>
+                        <td>Risk Sharing</td>
+                        <td>Business risks are shared with the service provider.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
