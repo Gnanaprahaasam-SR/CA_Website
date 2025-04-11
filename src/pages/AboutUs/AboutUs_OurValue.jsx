@@ -13,7 +13,7 @@ export default function AboutUs_OurValue() {
                 <h1 className=' aboutus-heading pb-3'>{ourValueData.title}</h1>
             </div> */}
             <div className='row'>
-                <img src={require("../../images/AboutUs1.jpg")} alt="AboutUs" width="80%" className='' />
+                <img src={ourValueData.image} alt="AboutUs" width="100%" style={{maxHeight:'90vh'}} />
                 <div>
                     <h1 className='text-center typing pb-3'>{ourValueData.title}</h1>
                 </div> 
@@ -58,7 +58,7 @@ export default function AboutUs_OurValue() {
                 <div className='col-md-6 col-12'>
                     <div className='shadow rounded-4 ourValue-card'>
                         <div className='px-2 d-flex justify-content-center  imageContainer'>
-                            <img src={ourValueData.categories[3].image} alt="title" width="95%" className='ourValue-image' />
+                            <img src={ourValueData.categories[3].image} alt="title"  className='ourValue-image' />
                         </div>
                         <div className='ourValue-content'>
                             <h3 className='main-title text-center pb-3'>{ourValueData.categories[3].title}</h3>

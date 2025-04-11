@@ -1,14 +1,14 @@
 import React from 'react';
-import PowerGeneration from "../../images/PowerGeneration.svg";
-import Healthcare from "../../images/Healthcare.png";
-import TradeRetail from "../../images/Trade-Retail.png";
+import PowerGeneration from "../../images/PowerGeneration.png";
+import Healthcare from "../../images/Healthcare1.png";
+import TradeRetail from "../../images/Trade-Retail.jpg";
 import HospitalityEntertainment from "../../images/Hospitality-Entertainment.png";
 import BankingFinance from "../../images/Banking-Finance.png";
-import Education from "../../images/Education.png";
-import ProfitEntities from "../../images/ProfitEntities.png";
-import IT from "../../images/IT-Enable.png";
-import Infrastructure from "../../images/Infrastructure.png";
-import manufacturing from "../../images/Manufacturing.png"
+import Education from "../../images/Education1.png";
+import ProfitEntities from "../../images/NotForProfit.png";
+import IT from "../../images/IT-Enable1.png";
+import Infrastructure from "../../images/Infrastructure.jpg";
+import manufacturing from "../../images/Manufacturing1.png"
 
 const ExperiencePage = () => {
 

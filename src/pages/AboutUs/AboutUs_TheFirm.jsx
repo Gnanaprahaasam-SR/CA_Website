@@ -13,7 +13,7 @@ export default function AboutUs_TheFirm() {
             </div> */}
 
             <div className='row'>
-                <img src={require("../../images/AboutUs1.jpg")} alt="AboutUs" width="80%" style={{height:"100%"}} />
+                <img src={firmData.image} alt="AboutUs" width="100%" style={{maxHeight:'90vh'}} />
                 <div>
                     <h1 className='text-center typing pb-3'>{firmData.title}</h1>
                 </div> 

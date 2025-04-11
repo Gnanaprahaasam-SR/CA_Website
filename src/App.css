@@ -453,7 +453,7 @@ h6 {
 }
 
 .footer .info-box {
-  border: 5px solid var(--card-color);
+  border: 5px solid #01AFB6;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -467,7 +467,7 @@ h6 {
 }
 
 .info-box-content {
-  background-color: var(--card-color);
+  background-color: #01AFB6;
   border-radius: 20px;
   padding: 10px 20px;
   color: white;
@@ -654,11 +654,10 @@ h6 {
   border: none;
   padding: 5px 20px;
   border-radius: 5px;
-  background: rgb(47, 50, 248);
+  background: var(--primary-green);
   background-position: right bottom;
   color: var(--white-color);
   cursor: pointer;
-  transition: background-position 0.5s ease, color 0.5s ease;
   position: relative;
   z-index: 1;
   display: none;

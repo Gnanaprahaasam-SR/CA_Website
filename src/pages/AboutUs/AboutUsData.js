@@ -6,13 +6,14 @@ import CA_SUBA_SHREE_SV from '../../images/TeamImage/CA_SUBA_SHREE_SV.jpeg';
 import nithya from "../../images/nithya.png";
 import Experience from '../../images/Experience.png';
 import Excellence from "../../images/Excellence.png";
-import Community from "../../images/community_contribution.png";
-import Leadership from "../../images/Leadership.png";
-import Respect from "../../images/Respect.png";
-import Transformation from "../../images/Transformation.png";
-import Service from "../../images/ServicePortfolio.png";
-import Integrity from "../../images/Integrity.png";
-import AboutUs from "../../images/AboutUs.jpg"
+import Community from "../../images/community_contribution.svg";
+import Leadership from "../../images/Leadership1.png";
+import Respect from "../../images/Respect1.png";
+import Transformation from "../../images/Transformation1.png";
+import Service from "../../images/Portfolio.png";
+import Integrity from "../../images/Integrity.jpg";
+import firm from "../../images/firm.jpg";
+import ourValue from "../../images/OurValue.jpg";
 
 const AboutUsData = {
     firm: {
@@ -43,11 +44,11 @@ const AboutUsData = {
                 image: Community
               }
             ],
-        image: AboutUs
+        image: firm
     },
     values: {
         title: "Our Value",
-        image: AboutUs,
+        image: ourValue,
         categories:[ {
             title:"Respect",
             icon: <Accessibility />,
@@ -83,7 +84,7 @@ const AboutUsData = {
     },
     team: {
         title: "Our Team",
-        image: AboutUs,
+        // image: AboutUs,
         members: [
             {
                 name: "CA T.CHITHIRAI PANDIAN",
