@@ -843,7 +843,9 @@ h6 {
   padding-bottom: 4%;
 }
 
-
+.normal-font{
+  font-size: 14px;
+}
 
 @media screen and (max-width:550px) {
 

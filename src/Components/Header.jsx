@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import logo from "../images/CA1.png";
@@ -7,19 +7,25 @@ import "../App.css";
 
 function NavBar() {
 
+  const [expanded, setExpanded] = useState(false);
   const handleChange = () => {
     window.scroll(0, 0);
+    setExpanded(false);
   }
 
+  const toggleNavbar = () => {
+    setExpanded(expanded ? false : "expanded"); // Toggle between expanded and closed
+  };
+
   return (
-    <Navbar collapseOnSelect expand="lg" className="shadow-sm">
+    <Navbar expanded={expanded} expand="lg" className="shadow-sm">
       <Container fluid>
         <Navbar.Brand as={NavLink} onClick={handleChange} to="/" className="d-flex flex-column align-items-center" >
           <img src={logo} alt="Company Logo" width={50} className=" " />
           <h6 className="" style={{ color: "#116391" }}>CHITHIRAIPANDIAN & CO </h6>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle aria-controls="navbarScroll" onClick={toggleNavbar} />
         <Navbar.Collapse id="navbarScroll" className="justify-content-end" >
           <Nav className="d-flex mx-left my-2 my-lg-0 gap-2" style={{ maxHeight: "100px" }} navbarScroll>
             <Nav.Link as={NavLink} exact onClick={handleChange} to="/" className="menu_link" >

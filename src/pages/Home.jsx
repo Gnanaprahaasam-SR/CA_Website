@@ -81,70 +81,70 @@ const cardItems = [
   }
 ];
 
-function TextTypingAnimation(props) {
-  const [textIndex, setTextIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const [isDelete, setIsDelete] = useState(false);
+// function TextTypingAnimation(props) {
+//   const [textIndex, setTextIndex] = useState(0);
+//   const [charIndex, setCharIndex] = useState(0);
+//   const [isDelete, setIsDelete] = useState(false);
 
-  const timeoutRef = useRef(null);
-  const displayedTextRef = useRef("");
+//   const timeoutRef = useRef(null);
+//   const displayedTextRef = useRef("");
 
-  useEffect(() => {
-    if (props.texts?.length !== 0) {
-      const isEmptyDisplay = displayedTextRef.current === "";
-      // to extra delay in order to show fully text
-      const shouldDelayNextProcess =
-        isDelete &&
-        displayedTextRef.current.length === props.texts[textIndex].length;
+//   useEffect(() => {
+//     if (props.texts?.length !== 0) {
+//       const isEmptyDisplay = displayedTextRef.current === "";
+//       // to extra delay in order to show fully text
+//       const shouldDelayNextProcess =
+//         isDelete &&
+//         displayedTextRef.current.length === props.texts[textIndex].length;
 
-      displayedTextRef.current = props.texts[textIndex].substr(0, charIndex);
+//       displayedTextRef.current = props.texts[textIndex].substr(0, charIndex);
 
-      timeoutRef.current = setTimeout(
-        () => {
-          if (isDelete && isEmptyDisplay) {
-            // when finish the deletion of current text, then start displaying next text index
-            // if it's the last index already, then start the first text index
-            setIsDelete(false);
-            setTextIndex((prevTextIndex) =>
-              prevTextIndex + 1 < props.texts.length ? prevTextIndex + 1 : 0
-            );
-          } else if (
-            isDelete ||
-            displayedTextRef.current === props.texts[textIndex]
-          ) {
-            // if the current text is displayed fully OR on deletion process,
-            // then decrease sub-string index of current text to start deletion process
-            setIsDelete(true);
-            setCharIndex((prevSubIndex) =>
-              prevSubIndex !== -1 ? prevSubIndex - 1 : 0
-            );
-          } else if (
-            !isDelete &&
-            displayedTextRef.current !== props.texts[textIndex]
-          ) {
-            // if it is not on deletion process and the full text has not been displayed yet
-            // then increase sub-string index of current text
-            setCharIndex((prevCharIndex) =>
-              prevCharIndex + 1 <= props.texts[textIndex].length
-                ? prevCharIndex + 1
-                : 0
-            );
-          }
-        },
-        shouldDelayNextProcess ? 2000 : 150 - Math.random() * 100
-      );
-    }
+//       timeoutRef.current = setTimeout(
+//         () => {
+//           if (isDelete && isEmptyDisplay) {
+//             // when finish the deletion of current text, then start displaying next text index
+//             // if it's the last index already, then start the first text index
+//             setIsDelete(false);
+//             setTextIndex((prevTextIndex) =>
+//               prevTextIndex + 1 < props.texts.length ? prevTextIndex + 1 : 0
+//             );
+//           } else if (
+//             isDelete ||
+//             displayedTextRef.current === props.texts[textIndex]
+//           ) {
+//             // if the current text is displayed fully OR on deletion process,
+//             // then decrease sub-string index of current text to start deletion process
+//             setIsDelete(true);
+//             setCharIndex((prevSubIndex) =>
+//               prevSubIndex !== -1 ? prevSubIndex - 1 : 0
+//             );
+//           } else if (
+//             !isDelete &&
+//             displayedTextRef.current !== props.texts[textIndex]
+//           ) {
+//             // if it is not on deletion process and the full text has not been displayed yet
+//             // then increase sub-string index of current text
+//             setCharIndex((prevCharIndex) =>
+//               prevCharIndex + 1 <= props.texts[textIndex].length
+//                 ? prevCharIndex + 1
+//                 : 0
+//             );
+//           }
+//         },
+//         shouldDelayNextProcess ? 2000 : 150 - Math.random() * 100
+//       );
+//     }
 
-    return () => clearTimeout(timeoutRef.current);
-  }, [props.texts, charIndex, textIndex, isDelete]);
+//     return () => clearTimeout(timeoutRef.current);
+//   }, [props.texts, charIndex, textIndex, isDelete]);
 
-  return (
-    <h2 className={props.className}>
-      {displayedTextRef.current}
-      <span className="cursor "> |</span>
-    </h2>
-  );
-}
+//   return (
+//     <h2 className={props.className}>
+//       {displayedTextRef.current}
+//       <span className="cursor "> |</span>
+//     </h2>
+//   );
+// }
 
 const CustomLeftArrow = ({ onClick }) => {
   return (
@@ -229,18 +229,10 @@ const testimonials = [
 const Home = () => {
   const home = Content.Home;
 
-  // const [isExpanded, setIsExpanded] = useState(false);
-
-  // // Function to toggle the expanded state
-  // const toggleReadMore = () => {
-  //   setIsExpanded(!isExpanded);
-  // };
 
   const handleChange = () => {
     window.scroll(0, 0);
   }
-
-
 
   return (
     <div className="home container-fluid overflow-hidden ">
@@ -255,52 +247,18 @@ const Home = () => {
         </div>
       </div>
 
-      {/* <div className="row container-fluid hero-section d-flex  d-flex align-items-center  g-2 pb-5">
-        <div className="col-md-6 col-12 px-5">
-          <div className="pb-2">
-            <h2 className="d-inline main-title">Manage Your </h2>
-            <TextTypingAnimation
-              className="d-inline typing"
-              texts={["Accounting Standards", "Balance Sheet", "Book keeping", "Ledger", "Income Statement", "Taxation"]}
-            /> <br />
-            <h2 className="main-title">In a Right Way.</h2>
-          </div>
-          <div className="py-2 " >
-            <p style={{ textAlign: "justify" }}>Chithirai Pandian & Co firm is a top provider of accounting, audit, and tax services for both businesses and individuals. Our team of skilled professionals brings extensive experience, ensuring your financial needs are managed with precision and efficiency.</p>
-            <p style={{ textAlign: "justify" }}>
-              Utilizing the latest technology, we serve clients worldwide and maintain a strong presence in the India and beyond through remote services. Our commitment is to deliver exceptional quality and consistently exceed client expectations.
-            </p>
-            <p>To know more, </p>
-          </div>
 
-          <div className="d-flex  justify-content-center gap-5">
-            <Link to="/service" onClick={handleChange} className="text-decoration-none">
-              <button className="our-service" >
-                Our Services
-              </button>
-            </Link>
-            <Link to="/contact" onClick={handleChange} className="text-decoration-none">
-              <button className="talk-button" >
-                Let's Talk
-              </button>
-            </Link>
-          </div>
-        </div>
-        <div className="col-md-6 col-12  d-flex justify-content-center " >
-          <img src={require("../images/CAOffice.jpg")} alt="hero section" width="80%" className="rounded-4" />
-        </div>
-      </div> */}
 
-      <div className=" container-fluid hero-section pb-5 clearfix ">
+      <div className=" container hero-section pb-5 clearfix ">
 
         <img src={require("../images/CAOffice.jpg")} alt="hero section" width="95%" className="rounded-4 col-md-5 col-12 float-md-end mb-2 ms-md-3" />
         <div className="">
           <div className="main-title text-center py-3">
-            <h2>Welcome To</h2>
+            <h2>You Can Trust!</h2>
             <h2 className="typing">CHITHIRAIPANDIAN AND CO</h2>
-            <h2>Chartered Accountants! You Can Trust!</h2>
+            <h2>Chartered Accountants!</h2>
           </div>
-          <div >
+          <div className="normal-font" >
             <p style={{ textAlign: "justify" }}>
               At <b>Chithiraipandian and Co</b>, we believe in building long-term relationships based on trust, integrity, and professionalism. Our mission is to deliver proactive, practical, and results-driven financial solutions that help our clients thrive in a dynamic marketplace.</p>
             <p style={{ textAlign: "justify" }}>
@@ -313,23 +271,19 @@ const Home = () => {
         </div>
       </div>
 
-      {/* About us */}
-      <h3 className=" main-title text-center pb-3">About Us</h3>
-      <div className="row about-us py-2 d-flex justify-content-center align-items-center">
-        <div className="col-md-6 col-12 px-md-5 d-flex justify-content-center pb-3 ">
-          <img src={chithirapandian} alt="chithirapandian" width="90%" className="rounded-4" />
-        </div>
-        <div className="col-md-6 col-12 px-5  pb-3">
-          <p style={{ textAlign: "justify" }}> T.ChithiraiPandian, Chartered Accountant, has more than two decade of experience in various fields has earned very good reputation for excellence in Accountancy, Auditing, and Taxation. He is specialize in Project Financing, Venture Capital, Private Equity, Virtual CFO Consulting and the successful restructuring of stress industries. He is also recognized for his expertise in Indirect Taxes, GST, Company Law matters, and Knowledge Process Outsourcing (KPO), offering innovative solutions to clients both in India and overseas.  </p>
-          <br />
+      {/*Our Founder */}
+      <h3 className=" main-title text-center pb-3">Our Founder</h3>
+      <div className="about-us py-2 container  clearfix ">
 
+        <img src={chithirapandian} alt="chithirapandian" width="80%" className="rounded-4 col-md-5 col-12 float-md-start mb-3 me-md-4 img-fluid" />
 
+        <div className="normal-font" >
+          <h5>Thangaraja Chithiraipandian</h5>
+          <h6>Visionary Chartered Accountant | Tech-Driven Strategist| Information System Auditor (ICAI) | Certified Artificial Intelligence Chartered Accountant (ICAI) | Life Member – Tamil Nadu and Pondicherry Chartered Accountants Association</h6>
 
-          {/* <div className="d-flex justify-content-end">
-            <button onClick={toggleReadMore} className="readmore">
-              {isExpanded ? 'Show Less' : 'Read More'}
-            </button>
-          </div> */}
+          <p>Core Areas of Expertise: Strategic Financial Planning | Risk Management & Risk Audit | Performance Optimization| Corporate Governance| Information System Audit | Global Outsourcing | Business Valuation for M&A</p>
+          <p style={{ textAlign: "justify" }}>T. Chithiraipandian is a forward-thinking Chartered Accountant, having more than two decades of experience in transforming businesses through his finance Modelling and Business Strategies. Known for his precision, innovation, and strategic acumen, he bridges traditional finance with modern technology—empowering organizations to scale with clarity and confidence. His dynamic approach integrates financial discipline, business foresight, and cutting-edge tools, making him a trusted advisor to leaders in India and abroad. His core strength lies in proven track record in establishment of New Enterprises/startups, turnaround of financially stressed businesses in to profitable business, transforming complex financial data into clear and strategic decisions that drive business success, emphasizes in Business Analysis, which covers leveraging data, market intelligence, and key performance indicators (KPIs) to uncover opportunities and sharpen the client’s competitive edge. He also expertise in providing strong Decision Support, which includes delivering sharp, data-backed financial insights that support high-stakes decisions, investments, Mergers &Acquisition, cost of restructuring, and beyond. With an emphasis on sustainable growth, strong governance, and global best practices, he consistently delivers value that contributes to long-term organizational excellence.
+          </p>
         </div>
 
       </div>
@@ -339,8 +293,8 @@ const Home = () => {
         <h3 className=" main-title text-center">Our Services</h3>
         <div className="row">
           {cardItems.map((item, index) => (
-            <div key={index} className="col-md-4 col-sm-6 col-12 g-4">
-              <div className={`serviceCard-item serviceCard-item-${index + 1} shadow`}>
+            <div key={index} className="col-md-4 col-sm-6 col-12 g-4 ">
+              <div className={`serviceCard-item serviceCard-item-${index + 1} shadow h-100`}>
                 <span className="serviceCard-icon px-2">
                   <img src={item.icon} alt="" width="100%" />
                 </span>
@@ -366,33 +320,33 @@ const Home = () => {
 
       {/* Our Team */}
       <h3 className=" main-title text-center py-2  ">Our Team</h3>
-      <div className="row our-team d-flex align-items-center py-4 ">
-        <div className="col-md-6 px-4 ">
+      <div className="container">
+        <div className="row our-team d-flex align-items-center py-4 ">
+          <div className="col-12 col-sm-12 col-md-6 px-4 ">
+            <div className=" team-carosal">
+              <TeamData />
+            </div>
 
-          <div className=" team-carosal">
-            <TeamData />
+          </div>
+          <div className="col-12 col-sm-12 col-md-6 px-5 ">
+            <div style={{ textAlign: 'justify' }}>
+              <p className="normal-font">
+                Our firm is powered by a dynamic team of experts dedicated to delivering top-tier service. Led by our experienced Proprietor, we uphold the highest standards of quality and integrity.
+              </p>
+            </div>
+            <div className="py-3 normal-font">
+              <ul>
+                <li> <b>Chartered Accountants:</b> Providing expert advice on financial reporting, taxation, audits, and strategic planning to drive business success.</li>
+                <li>  <b>Company Secretaries:</b> Ensuring corporate compliance and governance, guiding businesses through regulatory complexities.</li>
+                <li>  <b>Executives (Non-CA):</b> Facilitating smooth client interactions and efficient project delivery with diverse management expertise.</li>
+                <li>  <b>Article Trainees:</b> The future of the profession, gaining hands-on experience under skilled mentorship.</li>
+                <li>  <b>Support Staff:</b> Providing essential administrative and technical support to keep operations running smoothly.</li>
+              </ul>
+            </div>
           </div>
 
         </div>
-        <div className="col-md-6 px-5 ">
-          <div style={{ textAlign: 'justify' }}>
-            <p>
-              Our firm is powered by a dynamic team of experts dedicated to delivering top-tier service. Led by our experienced Proprietor, we uphold the highest standards of quality and integrity.
-            </p>
-          </div>
-          <div className="py-3">
-            <ul>
-              <li> <b>Chartered Accountants:</b> Providing expert advice on financial reporting, taxation, audits, and strategic planning to drive business success.</li>
-              <li>  <b>Company Secretaries:</b> Ensuring corporate compliance and governance, guiding businesses through regulatory complexities.</li>
-              <li>  <b>Executives (Non-CA):</b> Facilitating smooth client interactions and efficient project delivery with diverse management expertise.</li>
-              <li>  <b>Article Trainees:</b> The future of the profession, gaining hands-on experience under skilled mentorship.</li>
-              <li>  <b>Support Staff:</b> Providing essential administrative and technical support to keep operations running smoothly.</li>
-            </ul>
-          </div>
-        </div>
-
       </div>
-
       {/* Client Testimonial's */}
       {/* <h3 className=" main-title text-center py-3">Client Testimonial's</h3>
       <div className="row mb-4">
